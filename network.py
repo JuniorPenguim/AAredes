@@ -13,16 +13,16 @@ class Network:
     def getP(self):
         return self.p
 
-    def connect(self):
+    def connect(self): #função pra fazer a conexão do player
         try:
             self.client.connect(self.addr)
-            return self.client.recv(2048).decode()
+            return self.client.recv(2048).decode() #retorno decodificado para saber qual player foi conectado
         except:
             pass
 
-    def send(self, data):
+    def send(self, data): #função pra enviar dados
         try:
-            self.client.send(str.encode(data))
-            return pickle.loads(self.client.recv(2048*2))
+            self.client.send(str.encode(data)) #dado enviado como string
+            return pickle.loads(self.client.recv(2048*2)) #retorno feito como objeto
         except socket.error as e:
             print(e)
