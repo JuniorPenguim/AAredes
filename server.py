@@ -68,7 +68,7 @@ while True: #função pra verificar os pares de jogos abertos
     if idCount % 2 == 1:  #if para dizer que o número de players é ímpar e precisa conectar um player novo
         games[gameId] = Game(gameId)
         print("Criando um jogo novo...")
-    else: #existe um número ímpar de players e o jogo já pode iniciar
+    else: #existe um número par de players e o jogo já pode iniciar
         games[gameId].ready = True
         p = 1
 
